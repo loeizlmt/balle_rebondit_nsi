@@ -24,10 +24,10 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     # rebond sur les bords gauche et droit
     if bx < r or bx > 1000 - r:
         vx = -vx
-        r = random.randint(1, 100)
+        r = random.randint(1, 100)#changer le rayon du cercle de manière pseudo aléatoire
     if by < r or by > 500 - r: 
         vy = -vy
-        r = random.randint(1, 100)
+        r = random.randint(1, 100)#changer le rayon du cercle de manière pseudo aléatoire
     # dessin du cercle
     circle(bx,by,2*r)   
     fill(124,125,255) 

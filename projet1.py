@@ -3,7 +3,7 @@ import random
 
 
 
-def createCanvas(a,b):
+def createCanvas(a,b):# fonction qui crée la fenêtre
     size(a,b)
     no_stroke()
 

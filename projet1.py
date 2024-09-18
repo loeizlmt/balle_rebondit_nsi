@@ -1,4 +1,9 @@
 from p5 import *
+import random
+
+def createCanvas(a,b):
+    size(a,b)
+    no_stroke()
 
 def setup():
     global bx,by,vx,vy,r

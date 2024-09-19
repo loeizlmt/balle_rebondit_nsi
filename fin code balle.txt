@@ -1,0 +1,17 @@
+t = 0
+rebond=False
+rebond1=False
+
+t,rebond1,rebond
+
+and rebond==False and rebond==False
+rebond=True
+
+and rebond1 == False and rebond1 == False
+rebond1=True
+
+if t > 60 :
+rebond=False
+rebond1=False
+t = 0
+t = t + 1

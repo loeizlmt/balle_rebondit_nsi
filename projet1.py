@@ -39,16 +39,16 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
         changerVitesse()# fonction qui augmente la vitesse
         changerTaille() # fonction qui change la taille
         totalRebond = totalRebond +1 # permet de compter les rebonds
-
+        
         # test si le diamètre est égal à 20 et incrémente la variable toto
         if d == 10 : 
             toto = toto + 1
 
-        # si la balle rebondit sur le bord gauche on la replace à bx + r
+        # si la balle rebondit sur le bord gauche on la replace à bx + d
         if bx < d :
             bx = bx + d
 
-        # si la balle rebondit sur le bord droit on la replace à bx - r
+        # si la balle rebondit sur le bord droit on la replace à bx - d
         if bx > 500 - d :
             bx = bx - d   
 
@@ -63,11 +63,11 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
         if d == 10 : 
             toto = toto + 1
 
-        # si la balle rebond en haut on la replace à by + r
+        # si la balle rebond en haut on la replace à by + d
         if by < d :
             by = by + d # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
 
-        # si la balle rebond en bas on la replace à by - r
+        # si la balle rebond en bas on la replace à by - d
         if by > 400 - d :
             by = by - d # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
 

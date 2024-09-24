@@ -24,7 +24,8 @@ def changerVitesse() :
     vx = (vx * (10/100)) + vx
     vy = (vy * (10/100)) + vy
 def changerTaille():
-    random.randint(1, 10)#changer le rayon du cercle de manière pseudo aléatoire
+    global r
+    r = random.randint(1, 10)#changer le rayon du cercle de manière pseudo aléatoire 
 
 def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     global bx,by,vx,vy,r,t,rebond1,rebond,toto,totalRebond
@@ -36,7 +37,7 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     if bx < r and rebond==False or bx > 500 - r and rebond==False:
         vx = -vx
         changerVitesse()
-        r = changerTaille()
+        changerTaille()
         rebond=True
         totalRebond = totalRebond +1
         if r == 10 : 
@@ -44,12 +45,12 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     if by < r and rebond1 == False or by > 400 - r and rebond1 == False: 
         vy = -vy
         changerVitesse()
-        r = changerTaille()
+        changerTaille()
         rebond1=True
         totalRebond = totalRebond +1
         if r == 10 : 
             toto = toto + 1
-    if t > 60 :
+    if t > 5 :
         rebond=False
         rebond1=False
         t = 0

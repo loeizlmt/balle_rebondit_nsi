@@ -7,7 +7,6 @@ rebond1=False
 toto = 0
 totalRebond = 0
 
-
 def createCanvas(a,b):# fonction qui crée la fenêtre
     size(a,b)
     no_stroke()
@@ -20,6 +19,13 @@ def setup():
     vx = 4
     vy = 5
     createCanvas(500,400) # crée une fenêtre de 1000 x 500 pixels
+def changerVitesse() :
+    global vx,vy
+    vx = (vx * (10/100)) + vx
+    vy = (vy * (10/100)) + vy
+def changerTaille():
+    random.randint(1, 10)#changer le rayon du cercle de manière pseudo aléatoire
+
 def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     global bx,by,vx,vy,r,t,rebond1,rebond,toto,totalRebond
     background(0,0,0)# fond noir
@@ -29,18 +35,16 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     # rebond sur les bords gauche et droit
     if bx < r and rebond==False or bx > 500 - r and rebond==False:
         vx = -vx
-        vx = (vx * (10/100)) + vx
-        vy = (vy * (10/100)) + vy
-        r = random.randint(1, 10)#changer le rayon du cercle de manière pseudo aléatoire
+        changerVitesse()
+        r = changerTaille()
         rebond=True
         totalRebond = totalRebond +1
         if r == 10 : 
             toto = toto + 1
     if by < r and rebond1 == False or by > 400 - r and rebond1 == False: 
         vy = -vy
-        vx = (vx * (10/100)) + vx
-        vy = (vy * (10/100)) + vy
-        r = random.randint(1, 10)#changer le rayon du cercle de manière pseudo aléatoire
+        changerVitesse()
+        r = changerTaille()
         rebond1=True
         totalRebond = totalRebond +1
         if r == 10 : 

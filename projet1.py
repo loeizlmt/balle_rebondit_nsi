@@ -9,7 +9,7 @@ def createCanvas(a,b):# fonction qui crée la fenêtre
 
 def setup(): 
     global bx,by,vx,vy,r
-    r = random.randint(5,20)# commencer avec le rayon du cercle aléatoirement
+    r = random.randint(2.5,10)# commencer avec le rayon du cercle aléatoirement
     bx = random.randint(200, 300)# commnce dans un carré de 100px de côté 
     by = random.randint(150, 250)# avec un centre à 250,200
     vx = 4 # variable vitesse horizontale

@@ -17,14 +17,14 @@ def setup():
     createCanvas(500,400) # crée une fenêtre de 500 x 400 pixels
 def changerVitesse() : # fonction qui permet d'augmenter la vitesse verticale et horizontale de la balle
     global vx,vy
-    vx = (vx * (10/50)) + vx
-    vy = (vy * (10/50)) + vy
+    vx = (vx * (10/100)) + vx
+    vy = (vy * (10/100)) + vy
 def changerTaille():# fonction qui permet de changer la taille de la balle aléatoirement
     global r
     r = random.randint(1, 10)# changer le rayon du cercle aléatoirement
 
 def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
-    global bx,by,vx,vy,r,toto,totalRebond,bybis,bxbis
+    global bx,by,vx,vy,r,toto,totalRebond
     background(0,0,0)# fond noir
     # mouvement du cercle sur l'axe horizontal
     bx = bx + vx

@@ -1,6 +1,9 @@
 from p5 import *
 import random
 
+t = 0
+rebond=False
+rebond1=False
 
 
 def createCanvas(a,b):# fonction qui crée la fenêtre
@@ -16,23 +19,31 @@ def setup():
     vy = 5
     createCanvas(500,400) # crée une fenêtre de 1000 x 500 pixels
 def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
-    global bx,by,vx,vy,r
+    global bx,by,vx,vy,r,t,rebond1,rebond
     background(0,0,0)# fond noir
     # mouvement du cercle sur l'axe horizontal
     bx = bx + vx
     by = by + vy
     # rebond sur les bords gauche et droit
-    if bx < r or bx > 500 - r:
+    if bx < r and rebond==False or bx > 500 - r and rebond==False:
         vx = -vx
         vx = vx + (10/100)
         vy = vy +(10/100)
-        r = random.randint(1, 100)#changer le rayon du cercle de manière pseudo aléatoire
-    if by < r or by > 400 - r: 
+        r = random.randint(1, 10)#changer le rayon du cercle de manière pseudo aléatoire
+        rebond=True
+    if by < r and rebond1 == False or by > 400 - r and rebond1 == False: 
         vy = -vy
         vx = vx + (10/100)
         vy = vy + (10/100)
-        r = random.randint(1, 100)#changer le rayon du cercle de manière pseudo aléatoire
+        r = random.randint(1, 10)#changer le rayon du cercle de manière pseudo aléatoire
+        rebond1=True
+    if t > 60 :
+        rebond=False
+        rebond1=False
+        t = 0
+
     # dessin du cercle
     circle(bx,by,2*r)   
-    fill(124,125,255) 
+    fill(124,125,255)
+    t = t + 1 
 run()

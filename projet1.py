@@ -14,8 +14,8 @@ def createCanvas(a,b):# fonction qui crée la fenêtre
 def setup():
     global bx,by,vx,vy,r
     r = random.randint(5,20)
-    bx = 50
-    by = 50
+    bx = random.randint(200, 300)
+    by = random.randint(150, 250)
     vx = 4
     vy = 5
     createCanvas(500,400) # crée une fenêtre de 1000 x 500 pixels
@@ -53,5 +53,4 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     circle(bx,by,2*r)   
     fill(124,125,255)
     t = t + 1
-    print(vx,vy) 
 run()

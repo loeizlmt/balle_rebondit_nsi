@@ -11,21 +11,21 @@ def createCanvas(a,b):# fonction qui crée la fenêtre
     size(a,b)
     no_stroke()
 
-def setup():
+def setup(): 
     global bx,by,vx,vy,r
-    r = random.randint(5,20)
-    bx = random.randint(200, 300)
-    by = random.randint(150, 250)
-    vx = 4
-    vy = 5
-    createCanvas(500,400) # crée une fenêtre de 1000 x 500 pixels
-def changerVitesse() :
+    r = random.randint(5,20)#commencer avec le rayon du cercle aléatoirement
+    bx = random.randint(200, 300)# commnce dans un carré de 100px de côté 
+    by = random.randint(150, 250)# avec un centre à 250,200
+    vx = 4 # variable vitesse horizontale
+    vy = 5 # variable vitesse verticale
+    createCanvas(500,400) # crée une fenêtre de 500 x 400 pixels
+def changerVitesse() : # fonction
     global vx,vy
     vx = (vx * (10/100)) + vx
     vy = (vy * (10/100)) + vy
 def changerTaille():
     global r
-    r = random.randint(1, 10)#changer le rayon du cercle de manière pseudo aléatoire 
+    r = random.randint(1, 10)#changer le rayon du cercle aléatoirement
 
 def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     global bx,by,vx,vy,r,t,rebond1,rebond,toto,totalRebond

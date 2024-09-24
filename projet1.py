@@ -28,16 +28,16 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     # rebond sur les bords gauche et droit
     if bx < r and rebond==False or bx > 500 - r and rebond==False:
         vx = -vx
-        vx = vx + (10/100)
-        vy = vy +(10/100)
+        vx = (vx * (10/100)) + vx
+        vy = (vy * (10/100)) + vy
         r = random.randint(1, 10)#changer le rayon du cercle de manière pseudo aléatoire
         rebond=True
         if r == 10 : 
             toto = toto + 1
     if by < r and rebond1 == False or by > 400 - r and rebond1 == False: 
         vy = -vy
-        vx = vx + (10/100)
-        vy = vy + (10/100)
+        vx = (vx * (10/100)) + vx
+        vy = (vy * (10/100)) + vy
         r = random.randint(1, 10)#changer le rayon du cercle de manière pseudo aléatoire
         rebond1=True
         if r == 10 : 
@@ -53,5 +53,5 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     circle(bx,by,2*r)   
     fill(124,125,255)
     t = t + 1
-    print(toto) 
+    print(vx,vy) 
 run()

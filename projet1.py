@@ -1,12 +1,10 @@
 from p5 import *
 import random
 
-t = 0
-rebond=False
-rebond1=False
 toto = 0
 totalRebond = 0
-
+bxbis = 0
+bybis = 0
 def createCanvas(a,b):# fonction qui crée la fenêtre
     size(a,b)
     no_stroke()
@@ -28,32 +26,30 @@ def changerTaille():
     r = random.randint(1, 10)#changer le rayon du cercle aléatoirement
 
 def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
-    global bx,by,vx,vy,r,t,rebond1,rebond,toto,totalRebond
+    global bx,by,vx,vy,r,t,rebond1,rebond,toto,totalRebond,bxbis,bybis
     background(0,0,0)# fond noir
     # mouvement du cercle sur l'axe horizontal
     bx = bx + vx
     by = by + vy
     # rebond sur les bords gauche et droit
-    if bx < r and rebond==False or bx > 500 - r and rebond==False:
+    if bx < r or bx > 500 - r:
         vx = -vx
+        bxbis = bx
         changerVitesse()
         changerTaille()
-        rebond=True
         totalRebond = totalRebond +1
         if r == 10 : 
             toto = toto + 1
-    if by < r and rebond1 == False or by > 400 - r and rebond1 == False: 
+        bx = bxbis
+    if by < r or by > 400 - r: 
         vy = -vy
+        bybis = by
         changerVitesse()
         changerTaille()
-        rebond1=True
         totalRebond = totalRebond +1
         if r == 10 : 
             toto = toto + 1
-    if t > 5 :
-        rebond=False
-        rebond1=False
-        t = 0
+        by = bybis
 
     if toto == 3 or toto > 3 :
         print(f"la balle à rebondit {totalRebond} fois")

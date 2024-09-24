@@ -9,8 +9,8 @@ def createCanvas(a,b):# fonction qui crée la fenêtre
     no_stroke()
 
 def setup(): 
-    global bx,by,vx,vy,r
-    r = random.randint(2.5,10)# commencer avec le rayon du cercle aléatoirement
+    global bx,by,vx,vy,d
+    d = random.randint(5,20)# commencer avec le rayon du cercle aléatoirement
     bx = random.randint(200, 300)# commnce dans un carré de 100px de côté 
     by = random.randint(150, 250)# avec un centre à 250,200
     vx = 4 # variable vitesse horizontale
@@ -23,53 +23,53 @@ def changerVitesse() : # fonction qui permet d'augmenter la vitesse verticale et
     vy = (vy * (10/100)) + vy
 
 def changerTaille():# fonction qui permet de changer la taille de la balle aléatoirement
-    global r
-    r = random.randint(1, 10)# changer le rayon du cercle aléatoirement
+    global d
+    d = random.randint(5, 20)# changer le rayon du cercle aléatoirement
 
 def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
-    global bx,by,vx,vy,r,toto,totalRebond
+    global bx,by,vx,vy,d,toto,totalRebond
     background(0,0,0)# fond noir
     # mouvement du cercle sur l'axe horizontal
     bx = bx + vx
     by = by + vy # mouvement du cercle sur l'axe vertical
 
     # rebond sur les bords gauche et droit
-    if bx < r or bx > 500 - r:
+    if bx < d or bx > 500 - d:
         vx = -vx # inverse la vitesse
         changerVitesse()# fonction qui augmente la vitesse
         changerTaille() # fonction qui change la taille
         totalRebond = totalRebond +1 # permet de compter les rebonds
 
         # test si le diamètre est égal à 20 et incrémente la variable toto
-        if r == 10 : 
+        if d == 10 : 
             toto = toto + 1
 
         # si la balle rebondit sur le bord gauche on la replace à bx + r
-        if bx < r :
-            bx = bx + r
+        if bx < d :
+            bx = bx + d
 
         # si la balle rebondit sur le bord droit on la replace à bx - r
-        if bx > 500 - r :
-            bx = bx - r   
+        if bx > 500 - d :
+            bx = bx - d   
 
     # rebond sur les bords haut et bas
-    if by < r or by > 400 - r: 
+    if by < d or by > 400 - d: 
         vy = -vy # inverse la vitesse
         changerVitesse()# fonction qui augmente la vitesse
         changerTaille() # fonction qui change la taille
         totalRebond = totalRebond +1 # permet de compter les rebonds
 
         # test si le diamètre est égal à 20 et incrémente la variable toto
-        if r == 10 : 
+        if d == 10 : 
             toto = toto + 1
 
         # si la balle rebond en haut on la replace à by + r
-        if by < r :
-            by = by + r # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
+        if by < d :
+            by = by + d # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
 
         # si la balle rebond en bas on la replace à by - r
-        if by > 400 - r :
-            by = by - r # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
+        if by > 400 - d :
+            by = by - d # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
 
 
     # vérifie si le diamètre de la balle a été de 20px 3 fois 
@@ -78,6 +78,6 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
         exit() # arrête le programme
 
     # dessin du cercle
-    circle(bx,by,2*r)   
+    circle(bx,by,d)   
     fill(124,125,255) # couleur du cercle
 run()

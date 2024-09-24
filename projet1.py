@@ -1,7 +1,6 @@
 from p5 import *
 import random
-bxbis = 0
-bybis =0 
+
 toto = 0
 totalRebond = 0
 def createCanvas(a,b):# fonction qui crée la fenêtre
@@ -33,7 +32,6 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     # rebond sur les bords gauche et droit
     if bx < r or bx > 500 - r:
         vx = -vx # inverse la vitesse
-        bxbis = bx
         changerVitesse()# fonction qui augmente la vitesse
         changerTaille() # fonction qui change la taille
         totalRebond = totalRebond +1 # permet de compter les rebonds
@@ -49,7 +47,6 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     # rebond sur les bords haut et bas
     if by < r or by > 400 - r: 
         vy = -vy # inverse la vitesse
-        bybis = by
         changerVitesse()# fonction qui augmente la vitesse
         changerTaille() # fonction qui change la taille
         totalRebond = totalRebond +1 # permet de compter les rebonds

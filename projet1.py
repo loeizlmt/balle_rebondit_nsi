@@ -35,11 +35,11 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
 
     # rebond sur les bords gauche et droit
     if bx < d or bx > 500 - d:
-        vx = -vx # inverse la vitesse
+        vx = - vx # inverse la vitesse
         changerVitesse()# fonction qui augmente la vitesse
         changerTaille() # fonction qui change la taille
         totalRebond = totalRebond +1 # permet de compter les rebonds
-        
+
         # test si le diamètre est égal à 20 et incrémente la variable toto
         if d == 10 : 
             toto = toto + 1

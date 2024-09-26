@@ -1,5 +1,8 @@
 from p5 import *
 import random
+from playsound import playsound
+import threading
+
 
 toto = 0
 totalRebond = 0
@@ -35,6 +38,7 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
 
     # rebond sur les bords gauche et droit
     if bx < d or bx > 500 - d:
+        threading.Thread(target=lambda: playsound("C://Users//loloj//OneDrive//Bureau//boing.mp3"), daemon=True).start()# ajoute un son qui s'exécute dans un autre thread 
         vx = - vx # inverse la vitesse
         changerVitesse()# fonction qui augmente la vitesse
         changerTaille() # fonction qui change la taille
@@ -53,7 +57,8 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
             bx = bx - d   
 
     # rebond sur les bords haut et bas
-    if by < d or by > 400 - d: 
+    if by < d or by > 400 - d:
+        threading.Thread(target=lambda: playsound("C://Users//loloj//OneDrive//Bureau//boing.mp3"), daemon=True).start()# ajoute un son qui s'exécute dans un autre thread 
         vy = -vy # inverse la vitesse
         changerVitesse()# fonction qui augmente la vitesse
         changerTaille() # fonction qui change la taille
@@ -70,7 +75,6 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
         # si la balle rebond en bas on la replace à by - d
         if by > 400 - d :
             by = by - d # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
-
 
     # vérifie si le diamètre de la balle a été de 20px 3 fois 
     if toto == 3 or toto > 3 :

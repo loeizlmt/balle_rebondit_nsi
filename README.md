@@ -12,3 +12,4 @@ Variable vx c'est la vitesse horizontale de la balle
 Variable vy c'est la vitesse verticale de la balle
 Pour ajouter un son on a utilisé la bibliothèque threading qui permet de jouer le son dans un autre thread (un peu comme une sorte de sous-programme) pour éviter d'interrompre le programme car sinon la balle serait bloquée le temps que le son soit joué.
 Notre script fonctionne sous python 3.9.19 car p5 ne fonctionnait pas avec les versions plus récentes.
+https://www.zonensi.fr/Miscellanees/utilisationP5/

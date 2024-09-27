@@ -1,14 +1,16 @@
-Fonction 1 :La fonction « create Canvas » est une fonction qui créer la fenêtre.
+Fonction 1 :La fonction « create Canvas » est une fonction qui crée la fenêtre.
 
-Fonction 2 :La fonction « set up » permet de définir la taille de la balle.
+Fonction 2 :La fonction « setup » permet de définir la taille de la balle, son emplacement de départ, sa vitesse verticale et horizontale ainsi que son diamètre qui sont définit par l'utilisateur dans l'interface graphique. Elle permet également d'appeller la fonction createCanvas() pour créer la fenêtre.
 
-Fonction 3 :La fonction « changer Vitesse » permet d’augmenter la vitesse horizontale et verticale de la balle.
+Fonction 3 :La fonction « changer Vitesse » permet d’augmenter la vitesse horizontale et verticale de la balle et de changer légèrement sa direction.
 
-Fonction 4 :La fonction « changer Taille » permet de changer la taille de la balle aléatoirement.
+Fonction 4 :La fonction « changer Taille » permet de changer le diamètre de la balle aléatoirement entre 5 et 20 px.
 
-Fonction 5 :La fonction « draw » est une fonction qui s’exécute 60 fois en boucle.
+Fonction 5 :La fonction « draw » est une fonction qui s’exécute 60 fois par secondes en boucle jusqu'à ce que le diamètre de la balle est atteint 3 fois 20px .
 
-Quand la balle rebondit sur les bords gauche et droit un son y est émit, puis la vitesse augmente avec la fonction « changer Vitesse »et la taille change aléatoirement avec la fonction « changer Taille », et on ajoute « Total Rebound » pour compter les rebonds.
+Fonction 6 : La fonction selectionerVxVyDiamètre() ouvre une interface graphique avec customtkinter pour permettre à l'utilisateur de choisir la vitesse horizontale et verticale ainsi que le diamètre de départ de la balle.
 
-Pour les rebonds sur les bords gauche et droit on teste si le diamètre est égal à 20 et on incrémente la variable Toto
+Quand la balle rebondit sur les bords gauche et droit un son est émit, puis la vitesse augmente avec la fonction « changer Vitesse » et la taille change aléatoirement avec la fonction « changer Taille » et on incrémente « Total Rebound » pour compter les rebonds.
+
+Pour les rebonds sur les bords gauche et droit on teste si le diamètre est égal à 20 et si oui on incrémente la variable Toto.
 

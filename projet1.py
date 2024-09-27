@@ -8,33 +8,43 @@ import customtkinter
 toto = 0
 totalRebond = 0
 
+# fonction qui permet à l'utilisateur de choisir la vitesse verticale et horizontale
+# ainsi que le diamètre de la balle de départ dans une interface graphique avec customtkinter
 def selectionerVxVyDiamètre():
-    global vx, vy, d
-    root_tk = tkinter.Tk()
-    root_tk.geometry("600x300")
-    root_tk.title("Balle rebondissante")
+    global vx, vy, d,entry,entry1,entry2 # récupère les variables globales
+    # fonction qui permet de récupérer les données des entrées et de fermer la fenêtre
+    def valider():
+        global vx,vy,d # récupère les variables globales
+        vx =  entry.get() # récupère la valeur saisie par l'utilisateur et la met dans la bonne variable
+        vy =  entry1.get() # récupère la valeur saisie par l'utilisateur et la met dans la bonne variable
+        d =  entry2.get() # récupère la valeur saisie par l'utilisateur et la met dans la bonne variable
+        root_tk.destroy() # ferme la fenêtre
 
+    root_tk = tkinter.Tk()
+    root_tk.geometry("600x300")# dimensions de la fenêtre
+    root_tk.title("Balle rebondissante")# titre de la fenêtre
+    # texte qui indique la valeur à mettre dans la case
     label = customtkinter.CTkLabel(master=root_tk,text="vitesse horizontale de départ : ",width=120,height=25,corner_radius=8)
     label.place(relx=0.2, rely=0.2, anchor=tkinter.CENTER)
+    # entrée où l'utilisateur peut saisir la valeur de la vitesse horizontale de départ
     entry = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
     entry.place(relx=0.5, rely=0.2, anchor=tkinter.CENTER)
-    vx =  entry.get()
-    vx = int(vx)
-
+    # texte qui indique la valeur à mettre dans la case
     label = customtkinter.CTkLabel(master=root_tk,text="vitesse verticale de départ : ",width=120,height=25,corner_radius=8)
     label.place(relx=0.2, rely=0.4, anchor=tkinter.CENTER)
+    # entrée où l'utilisateur peut saisir la valeur de la vitesse verticale de départ
     entry1 = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
     entry1.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
-    vy =  entry1.get()
-    vy = int(vy)
-
+    # texte qui indique la valeur à mettre dans la case
     label = customtkinter.CTkLabel(master=root_tk,text="diamètre de départ : ",width=120,height=25,corner_radius=8)
     label.place(relx=0.2, rely=0.6, anchor=tkinter.CENTER)
+    # entrée où l'utilisateur peut saisir la valeur du diamètre de la balle de départ
     entry2 = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
     entry2.place(relx=0.5, rely=0.6, anchor=tkinter.CENTER)
-    d =  entry2.get()
-    d = int(d)
-
+    # bouton pour valider les résultats
+    button = customtkinter.CTkButton(master=root_tk,text="Valider",command=valider,width=120, height=32,border_width=0,corner_radius=8)
+    button.place(relx=0.5, rely=0.8, anchor=tkinter.CENTER)
+    # crée la fenêtre
     root_tk.mainloop()
 
 def createCanvas(a,b):# fonction qui crée la fenêtre
@@ -42,27 +52,28 @@ def createCanvas(a,b):# fonction qui crée la fenêtre
     no_stroke()
 
 def setup(): 
-    global bx,by,vx,vy,d
-    d = random.randint(5,20)# commencer avec le rayon du cercle aléatoirement
+    global bx,by,vx,vy,d # récupère les variables globales
+    selectionerVxVyDiamètre()# appel de la fonction qui ouvre une interface utilisateur.
+    # transforme d,vx et vy en entier.
+    d = int(d)
+    vy = int(vy)
+    vx = int(vx)
     bx = random.randint(200, 300)# commnce dans un carré de 100px de côté 
     by = random.randint(150, 250)# avec un centre à 250,200
-    selectionerVxVyDiamètre()
-    #vx =  # variable vitesse horizontale
-    #vy =  # variable vitesse verticale
     createCanvas(500,400) # crée une fenêtre de 500 x 400 pixels
 
 def changerVitesse() : # fonction qui permet d'augmenter la vitesse verticale et horizontale de la balle
-    global vx,vy,b
+    global vx,vy,b # récupère les variables globales
     b = random.randint(90,110)
     vx = vx * (b/100)
     vy = vy * (b/100)
 
 def changerTaille():# fonction qui permet de changer la taille de la balle aléatoirement
-    global d
+    global d # récupère les variables globales
     d = random.randint(5, 20)# changer le rayon du cercle aléatoirement
 
 def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
-    global bx,by,vx,vy,d,toto,totalRebond
+    global bx,by,vx,vy,d,toto,totalRebond # récupère les variables globales
     background(0,0,0)# fond noir
     # mouvement du cercle sur l'axe horizontal
     bx = bx + vx

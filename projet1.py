@@ -19,13 +19,19 @@ def selectionerVxVyDiamètre():
         vx =  entry.get() # récupère la valeur saisie par l'utilisateur et la met dans la bonne variable
         vy =  entry1.get() # récupère la valeur saisie par l'utilisateur et la met dans la bonne variable
         d =  entry2.get() # récupère la valeur saisie par l'utilisateur et la met dans la bonne variable3
+        # gère les exceptions pour éviter d'avoir des variables vides
+        if vx == ""  or vy == "" or  d == "" :
+            messagebox.showerror("ERREUR","Veuillez entrer des valeurs valides")
+            root_tk.destroy()
+            exit()
         # transforme d,vx et vy en entier.
         d = int(d)
         vy = int(vy)
         vx = int(vx)
         # gère les exceptions pour éviter d'avoir des valeurs trop grandes ou négatives
-        if vx > 20 or vx < 0 or vy > 20 or vy < 0 or b > 20 or b < 0 :
+        if vx > 20 or vx <= 0 or vy > 20 or vy <= 0 or d > 20 or d <= 0 :
             messagebox.showerror("ERREUR","Veuillez entrer des valeurs valides")
+            root_tk.destroy()
             exit()
         root_tk.destroy() # ferme la fenêtre
 

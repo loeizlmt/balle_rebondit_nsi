@@ -46,7 +46,7 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
         totalRebond = totalRebond +1 # permet de compter les rebonds
 
         # test si le diamètre est égal à 20 et incrémente la variable toto
-        if d == 10 : 
+        if d == 20 : 
             toto = toto + 1
 
         # si la balle rebondit sur le bord gauche on la replace à bx + d
@@ -66,7 +66,7 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
         totalRebond = totalRebond +1 # permet de compter les rebonds
 
         # test si le diamètre est égal à 20 et incrémente la variable toto
-        if d == 10 : 
+        if d == 20 : 
             toto = toto + 1
 
         # si la balle rebond en haut on la replace à by + d

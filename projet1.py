@@ -2,10 +2,40 @@ from p5 import *
 import random
 from playsound import playsound
 import threading
-
+import tkinter
+import customtkinter
 
 toto = 0
 totalRebond = 0
+
+def selectionerVxVyDiamètre():
+    global vx, vy, d
+    root_tk = tkinter.Tk()
+    root_tk.geometry("600x300")
+    root_tk.title("Balle rebondissante")
+
+    label = customtkinter.CTkLabel(master=root_tk,text="vitesse horizontale de départ : ",width=120,height=25,corner_radius=8)
+    label.place(relx=0.2, rely=0.2, anchor=tkinter.CENTER)
+    entry = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
+    entry.place(relx=0.5, rely=0.2, anchor=tkinter.CENTER)
+    vx =  entry.get()
+    vx = int(vx)
+
+    label = customtkinter.CTkLabel(master=root_tk,text="vitesse verticale de départ : ",width=120,height=25,corner_radius=8)
+    label.place(relx=0.2, rely=0.4, anchor=tkinter.CENTER)
+    entry1 = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
+    entry1.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
+    vy =  entry1.get()
+    vy = int(vy)
+
+    label = customtkinter.CTkLabel(master=root_tk,text="diamètre de départ : ",width=120,height=25,corner_radius=8)
+    label.place(relx=0.2, rely=0.6, anchor=tkinter.CENTER)
+    entry2 = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
+    entry2.place(relx=0.5, rely=0.6, anchor=tkinter.CENTER)
+    d =  entry2.get()
+    d = int(d)
+
+    root_tk.mainloop()
 
 def createCanvas(a,b):# fonction qui crée la fenêtre
     size(a,b)
@@ -16,8 +46,9 @@ def setup():
     d = random.randint(5,20)# commencer avec le rayon du cercle aléatoirement
     bx = random.randint(200, 300)# commnce dans un carré de 100px de côté 
     by = random.randint(150, 250)# avec un centre à 250,200
-    vx = 4 # variable vitesse horizontale
-    vy = 5 # variable vitesse verticale
+    selectionerVxVyDiamètre()
+    #vx =  # variable vitesse horizontale
+    #vy =  # variable vitesse verticale
     createCanvas(500,400) # crée une fenêtre de 500 x 400 pixels
 
 def changerVitesse() : # fonction qui permet d'augmenter la vitesse verticale et horizontale de la balle

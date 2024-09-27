@@ -4,6 +4,7 @@ from playsound import playsound
 import threading
 import tkinter
 import customtkinter
+from tkinter import messagebox
 
 toto = 0
 totalRebond = 0
@@ -17,30 +18,38 @@ def selectionerVxVyDiamètre():
         global vx,vy,d # récupère les variables globales
         vx =  entry.get() # récupère la valeur saisie par l'utilisateur et la met dans la bonne variable
         vy =  entry1.get() # récupère la valeur saisie par l'utilisateur et la met dans la bonne variable
-        d =  entry2.get() # récupère la valeur saisie par l'utilisateur et la met dans la bonne variable
+        d =  entry2.get() # récupère la valeur saisie par l'utilisateur et la met dans la bonne variable3
+        # transforme d,vx et vy en entier.
+        d = int(d)
+        vy = int(vy)
+        vx = int(vx)
+        # gère les exceptions pour éviter d'avoir des valeurs trop grandes ou négatives
+        if vx > 20 or vx < 0 or vy > 20 or vy < 0 or b > 20 or b < 0 :
+            messagebox.showerror("ERREUR","Veuillez entrer des valeurs valides")
+            exit()
         root_tk.destroy() # ferme la fenêtre
 
     root_tk = tkinter.Tk()
     root_tk.geometry("600x300")# dimensions de la fenêtre
     root_tk.title("Balle rebondissante")# titre de la fenêtre
     # texte qui indique la valeur à mettre dans la case
-    label = customtkinter.CTkLabel(master=root_tk,text="vitesse horizontale de départ : ",width=120,height=25,corner_radius=8)
-    label.place(relx=0.2, rely=0.2, anchor=tkinter.CENTER)
+    label = customtkinter.CTkLabel(master=root_tk,text="vitesse horizontale de départ (entre 0 et 20) : ",width=120,height=25,corner_radius=8)
+    label.place(relx=0.3, rely=0.2, anchor=tkinter.CENTER)
     # entrée où l'utilisateur peut saisir la valeur de la vitesse horizontale de départ
     entry = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
-    entry.place(relx=0.5, rely=0.2, anchor=tkinter.CENTER)
+    entry.place(relx=0.7, rely=0.2, anchor=tkinter.CENTER)
     # texte qui indique la valeur à mettre dans la case
-    label = customtkinter.CTkLabel(master=root_tk,text="vitesse verticale de départ : ",width=120,height=25,corner_radius=8)
-    label.place(relx=0.2, rely=0.4, anchor=tkinter.CENTER)
+    label = customtkinter.CTkLabel(master=root_tk,text="vitesse verticale de départ (entre 0 et 20) : ",width=120,height=25,corner_radius=8)
+    label.place(relx=0.3, rely=0.4, anchor=tkinter.CENTER)
     # entrée où l'utilisateur peut saisir la valeur de la vitesse verticale de départ
     entry1 = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
-    entry1.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
+    entry1.place(relx=0.7, rely=0.4, anchor=tkinter.CENTER)
     # texte qui indique la valeur à mettre dans la case
-    label = customtkinter.CTkLabel(master=root_tk,text="diamètre de départ : ",width=120,height=25,corner_radius=8)
-    label.place(relx=0.2, rely=0.6, anchor=tkinter.CENTER)
+    label = customtkinter.CTkLabel(master=root_tk,text="diamètre de départ (entre 0 et 20) : ",width=120,height=25,corner_radius=8)
+    label.place(relx=0.3, rely=0.6, anchor=tkinter.CENTER)
     # entrée où l'utilisateur peut saisir la valeur du diamètre de la balle de départ
     entry2 = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
-    entry2.place(relx=0.5, rely=0.6, anchor=tkinter.CENTER)
+    entry2.place(relx=0.7, rely=0.6, anchor=tkinter.CENTER)
     # bouton pour valider les résultats
     button = customtkinter.CTkButton(master=root_tk,text="Valider",command=valider,width=120, height=32,border_width=0,corner_radius=8)
     button.place(relx=0.5, rely=0.8, anchor=tkinter.CENTER)
@@ -54,10 +63,6 @@ def createCanvas(a,b):# fonction qui crée la fenêtre
 def setup(): 
     global bx,by,vx,vy,d # récupère les variables globales
     selectionerVxVyDiamètre()# appel de la fonction qui ouvre une interface utilisateur.
-    # transforme d,vx et vy en entier.
-    d = int(d)
-    vy = int(vy)
-    vx = int(vx)
     bx = random.randint(200, 300)# commnce dans un carré de 100px de côté 
     by = random.randint(150, 250)# avec un centre à 250,200
     createCanvas(500,400) # crée une fenêtre de 500 x 400 pixels

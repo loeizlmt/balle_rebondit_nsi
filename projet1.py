@@ -21,9 +21,10 @@ def setup():
     createCanvas(500,400) # crée une fenêtre de 500 x 400 pixels
 
 def changerVitesse() : # fonction qui permet d'augmenter la vitesse verticale et horizontale de la balle
-    global vx,vy
-    vx = (vx * (10/100)) + vx
-    vy = (vy * (10/100)) + vy
+    global vx,vy,b
+    b = random.randint(90,110)
+    vx = vx * (b/100)
+    vy = vy * (b/100)
 
 def changerTaille():# fonction qui permet de changer la taille de la balle aléatoirement
     global d

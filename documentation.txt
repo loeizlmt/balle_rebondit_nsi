@@ -1,0 +1,14 @@
+Fonction 1 :La fonction « create Canvas » est une fonction qui créer la fenêtre.
+
+Fonction 2 :La fonction « set up » permet de définir la taille de la balle.
+
+Fonction 3 :La fonction « changer Vitesse » permet d’augmenter la vitesse horizontale et verticale de la balle.
+
+Fonction 4 :La fonction « changer Taille » permet de changer la taille de la balle aléatoirement.
+
+Fonction 5 :La fonction « draw » est une fonction qui s’exécute 60 fois en boucle.
+
+Quand la balle rebondit sur les bords gauche et droit un son y est émit, puis la vitesse augmente avec la fonction « changer Vitesse »et la taille change aléatoirement avec la fonction « changer Taille », et on ajoute « Total Rebound » pour compter les rebonds.
+
+Pour les rebonds sur les bords gauche et droit on teste si le diamètre est égal à 20 et on incrémente la variable Toto
+

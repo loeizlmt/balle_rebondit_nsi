@@ -91,7 +91,7 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
     by = by + vy # mouvement du cercle sur l'axe vertical
 
     # rebond sur les bords gauche et droit
-    if bx < d or bx > 500 - d:
+    if bx < d/2 or bx > 500 - d/2:
         threading.Thread(target=lambda: playsound("C://Users//loloj//OneDrive//Bureau//boing.mp3"), daemon=True).start()# ajoute un son qui s'exécute dans un autre thread 
         vx = - vx # inverse la vitesse
         changerVitesse()# fonction qui augmente la vitesse
@@ -102,16 +102,16 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
         if d == 20 : 
             toto = toto + 1
 
-        # si la balle rebondit sur le bord gauche on la replace à bx + d
-        if bx < d :
-            bx = bx + d
+        # si la balle rebondit sur le bord gauche on la replace à bx + d/2
+        if bx < d/2 :
+            bx = bx + d/2
 
-        # si la balle rebondit sur le bord droit on la replace à bx - d
-        if bx > 500 - d :
-            bx = bx - d   
+        # si la balle rebondit sur le bord droit on la replace à bx - d/2
+        if bx > 500 - d/2 :
+            bx = bx - d/2   
 
     # rebond sur les bords haut et bas
-    if by < d or by > 400 - d:
+    if by < d/2 or by > 400 - d/2:
         threading.Thread(target=lambda: playsound("C://Users//loloj//OneDrive//Bureau//boing.mp3"), daemon=True).start()# ajoute un son qui s'exécute dans un autre thread 
         vy = -vy # inverse la vitesse
         changerVitesse()# fonction qui augmente la vitesse
@@ -122,13 +122,13 @@ def draw():# cette fonction s'exécute  en boucle 60 fois par seconde...
         if d == 20 : 
             toto = toto + 1
 
-        # si la balle rebond en haut on la replace à by + d
-        if by < d :
-            by = by + d # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
+        # si la balle rebond en haut on la replace à by + d/2
+        if by < d/2 :
+            by = by + d/2 # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
 
-        # si la balle rebond en bas on la replace à by - d
-        if by > 400 - d :
-            by = by - d # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
+        # si la balle rebond en bas on la replace à by - d/2
+        if by > 400 - d/2 :
+            by = by - d/2 # replace la balle pour éviter que la balle rebondisse à l'infini sur le côté
 
     # vérifie si le diamètre de la balle a été de 20px 3 fois 
     if toto == 3 or toto > 3 :

@@ -10,6 +10,7 @@ Fonction 5 :La fonction « draw » est une fonction qui s’exécute 60 fois 
 
 Fonction 6 : La fonction selectionerVxVyDiamètre() ouvre une interface graphique avec customtkinter pour permettre à l'utilisateur de choisir la vitesse horizontale et verticale ainsi que le diamètre de départ de la balle.
 
+Mécanique de rebond : Lorsque le centre de la balle (bx ou by) est inférieur au rayon de la balle (d/2) ou qu'il est supérieur à la taille maximale de la fenêtre c'est que la balle à dépassé le bord gauche, droit, bas ou haut il faut donc la faire rebondir. Pour cela, on inverse la vitesse vx ou vy en fonction
 Quand la balle rebondit sur les bords gauche et droit un son est émit, puis la vitesse augmente avec la fonction « changer Vitesse » et la taille change aléatoirement avec la fonction « changer Taille » et on incrémente « Total Rebound » pour compter les rebonds.
 
 Pour les rebonds sur les bords gauche et droit on teste si le diamètre est égal à 20 et si oui on incrémente la variable Toto.

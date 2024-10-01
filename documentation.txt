@@ -1,4 +1,4 @@
-Fonction 1 :La fonction « create Canvas » est une fonction qui crée la fenêtre.
+Fonction 1 : La fonction "createCanvas" permet de créer une fenêtre avec les dimension souhaités.
 
 Fonction 2 :La fonction « setup » permet de définir l'emplacement de départ de la balle, sa vitesse verticale et horizontale ainsi que son diamètre qui sont définit par l'utilisateur dans l'interface graphique. Elle permet également d'appeller la fonction createCanvas() pour créer la fenêtre.
 

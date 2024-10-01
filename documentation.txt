@@ -10,12 +10,15 @@ Fonction 5 :La fonction « draw » est une fonction qui s’exécute 60 fois 
 
 Fonction 6 : La fonction selectionerVxVyDiamètre() ouvre une interface graphique avec customtkinter pour permettre à l'utilisateur de choisir la vitesse horizontale et verticale ainsi que le diamètre de départ de la balle.
 
-Mécanique de rebond : Lorsque le centre de la balle (bx ou by) est inférieur au rayon de la balle (d/2) ou qu'il est supérieur à la taille maximale de la fenêtre c'est que la balle a dépassé le bord gauche, droit, bas ou haut il faut donc la faire rebondir. Pour cela, on inverse la vitesse vx ou vy en fonction du bord touché. (droit et gauche = vx, haut et bas = vy). Lorsque la balle rebondit sur les bords gauche, droit, haut et bas un son est émis grâce à la fonction playsound() de la bibliothèque playsound. Pour éviter d'interrompre le programme en jouant le son, on exécute la fonction playsound dans un autre thread (un thread est un sous-programme).  
+Mécanique de rebond : Lorsque le centre de la balle (bx ou by) est inférieur au rayon de la balle (d/2) ou qu'il est supérieur à la taille maximale de la fenêtre c'est que la balle a dépassé le bord gauche, droit, bas ou haut il faut donc la faire rebondir. Pour cela, on inverse la vitesse vx ou vy en fonction du bord touché. (droit et gauche = vx, haut et bas = vy). Lorsque la balle rebondit sur les bords gauche, droit, haut et bas un son est émis grâce à la fonction playsound() de la bibliothèque playsound. Pour éviter d'interrompre le programme en jouant le son, on exécute la fonction playsound dans un autre thread (un thread est un sous-programme). 
+
 Augmentation de la vitesse : 
-rien
 
+La vitesse augmente avec la fonction « changer Vitesse » en récupérant la variable b et p et en leur appliquant une valeur aléatoire entre 90 et 110 puis pour la variable vx on multiplie vx avec b/100 et pour la variable vy on multiplie vy avec p/100 ce qui permet d'avoir une direction aléatoire à chaque rebond.
 
-puis la vitesse augmente avec la fonction « changer Vitesse » en récupérant la variable b et p et en leur appliquant une vitesse aléatoire entre 90 et 110 puis pour la variable vx on multiplie vx avec b/100 et pour la variable vy on multiplie vy avec p/100, et la taille change aléatoirement avec la fonction « changer Taille » en récupérant la variable d et en appliquant à son rayon une taille aléatoire entre 5 et 20 et on incrémente « Total Rebound » pour compter les rebonds.
+Changement de taille :
+
+La taille change aléatoirement avec la fonction « changer Taille » en récupérant la variable d(le diamètre) et en  lui appliquant aléatoire entre 5 et 20 et on incrémente « Total Rebound » pour compter les rebonds.
 
 Pour les rebonds sur les bords gauche et droit on teste si le diamètre est égal à 20 et si oui on incrémente la variable Toto.
 

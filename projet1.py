@@ -84,7 +84,6 @@ def changerVitesse() : # fonction qui permet d'augmenter la vitesse verticale et
     global vx,vy,b # récupère les variables globales
     b = random.randint(90,110)
     p = random.randint(90,110) 
-    print(b,"%")
     vx = vx * (b/100)
     vy = vy * (p/100)
 

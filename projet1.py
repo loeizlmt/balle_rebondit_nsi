@@ -1,9 +1,9 @@
 from p5 import *
 import random
 from playsound import playsound
-import threading
-import tkinter
-import customtkinter
+import threading #importation d une bibliotheque 
+import tkinter #interface graphique 
+import customtkinter #rendu plus nette pour l interface 
 from tkinter import messagebox
 
 toto = 0

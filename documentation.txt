@@ -15,7 +15,7 @@ Augmentation de la vitesse :
 rien
 
 
-puis la vitesse augmente avec la fonction « changer Vitesse » en récupérant les variables globales, et la taille change aléatoirement avec la fonction « changer Taille » en récupérant la variable d et en appliquant à son rayon une taille aléatoire entre 5 et 20 et on incrémente « Total Rebound » pour compter les rebonds.
+puis la vitesse augmente avec la fonction « changer Vitesse » en récupérant la variable b et p et en leur appliquant une vitesse aléatoire entre 90 et 110 puis pour la variable vx on multiplie vx avec b/100 et pour la variable vy on multiplie vy avec p/100, et la taille change aléatoirement avec la fonction « changer Taille » en récupérant la variable d et en appliquant à son rayon une taille aléatoire entre 5 et 20 et on incrémente « Total Rebound » pour compter les rebonds.
 
 Pour les rebonds sur les bords gauche et droit on teste si le diamètre est égal à 20 et si oui on incrémente la variable Toto.
 

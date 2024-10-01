@@ -19,3 +19,18 @@ puis la vitesse augmente avec la fonction « changer Vitesse » et la taille c
 
 Pour les rebonds sur les bords gauche et droit on teste si le diamètre est égal à 20 et si oui on incrémente la variable Toto.
 
+
+
+Mathis Bernier
+
+FONCTION 1/ -La fonction "createCanvas" permet de créer une fenêtre avec les dimension souhaités. 
+
+FONCTION 2/ -La fonction  "setup" permet de définir la taille de la balle , son en placement de départ dans un carre , de définir la vitesse de la balle avec l axe vx et vy et de crée une fenêtre canva de 500 par 400
+
+FONCTION 3/ -La fonction "changervitesse" comme son nom l indique elle permet de change la vitesse de la balle de 10 % par rebond.
+
+FONCTION 4/ -La fonction "changertaille" elle aussi comme son nom veut dire que la balle va changer de taille aléatoirement a chaque rebond.
+
+FONCTION 5/ -La fonction "draw" permet de faire le fond noir et de faire les mouvement de la balle sur l axe horizontale et verticale. Elle permet aussi de faire rebondir le balle et de mettre un son a chaque rebon de la balle 
+
+

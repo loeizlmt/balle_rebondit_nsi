@@ -1,12 +1,12 @@
-Fonction 1 : La fonction "createCanvas" permet de créer une fenêtre avec les dimension souhaités.
+Fonction 1 : La fonction "createCanvas" permet de créer une fenêtre avec les dimensions souhaitées.
 
-Fonction 2 :La fonction « setup » permet de définir l'emplacement de départ de la balle, sa vitesse verticale et horizontale ainsi que son diamètre qui sont définit par l'utilisateur dans l'interface graphique. Elle permet également d'appeller la fonction createCanvas() pour créer la fenêtre.
+Fonction 2 : La fonction « setup » permet de définir l'emplacement de départ de la balle, sa vitesse verticale et horizontale ainsi que son diamètre qui sont définit par l'utilisateur dans l'interface graphique. Elle permet également d'appeller la fonction createCanvas() pour créer la fenêtre.
 
-Fonction 3 :La fonction « changer Vitesse » permet d’augmenter la vitesse horizontale et verticale de la balle et de changer légèrement sa direction.
+Fonction 3 : La fonction « changer Vitesse » permet d’augmenter la vitesse horizontale et verticale de la balle et de changer légèrement sa direction.
 
-Fonction 4 :La fonction « changer Taille » permet de changer le diamètre de la balle aléatoirement entre 5 et 20 px.
+Fonction 4 : La fonction « changer Taille » permet de changer le diamètre de la balle aléatoirement entre 5 et 20 px.
 
-Fonction 5 :La fonction « draw » est une fonction qui s’exécute 60 fois par secondes en boucle jusqu'à ce que le diamètre de la balle est atteint 3 fois 20px .
+Fonction 5 : La fonction « draw » est une fonction qui s’exécute 60 fois par secondes en boucle jusqu'à ce que le diamètre de la balle est atteint 3 fois 20px .
 
 Fonction 6 : La fonction selectionerVxVyDiamètre() ouvre une interface graphique avec customtkinter pour permettre à l'utilisateur de choisir la vitesse horizontale et verticale ainsi que le diamètre de départ de la balle.
 
@@ -14,8 +14,10 @@ Mécanique de rebond : Lorsque le centre de la balle (bx ou by) est inférieur a
 
 Augmentation de la vitesse : 
 
-La vitesse augmente avec la fonction « changer Vitesse » en récupérant la variable b et p et en leur appliquant une valeur aléatoire entre 90 et 110 puis pour la variable vx on multiplie vx avec b/100 et pour la variable vy on multiplie vy avec p/100 ce qui permet d'avoir une direction aléatoire à chaque rebond.
+La vitesse augmente avec la fonction « changer Vitesse » en récupérant la variable b et p et en leur appliquant une valeur aléatoire entre 90 et 110 puis pour la variable vx on multiplie vx avec b/100 et pour la variable vy on multiplie vy avec p/100 ce qui permet d'avoir une direction aléatoire à chaque rebond.
 
 Changement de taille :
 
-La taille change aléatoirement avec la fonction « changer Taille » en récupérant la variable d(le diamètre) et en  lui appliquant aléatoire entre 5 et 20 et on incrémente « Total Rebound » pour compter les rebonds.
+La taille change aléatoirement avec la fonction « changer Taille » en récupérant la variable d(le diamètre) et en  lui appliquant aléatoire entre 5 et 20 et on incrémente « Total Rebound » pour compter les rebonds.
+
+Notre script fonctionne sous python 3.9.19 car p5 ne fonctionnait pas avec les versions plus récentes.

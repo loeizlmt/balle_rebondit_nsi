@@ -10,7 +10,27 @@ Fonction 5 :La fonction « draw » est une fonction qui s’exécute 60 fois 
 
 Fonction 6 : La fonction selectionerVxVyDiamètre() ouvre une interface graphique avec customtkinter pour permettre à l'utilisateur de choisir la vitesse horizontale et verticale ainsi que le diamètre de départ de la balle.
 
-Quand la balle rebondit sur les bords gauche et droit un son est émit, puis la vitesse augmente avec la fonction « changer Vitesse » et la taille change aléatoirement avec la fonction « changer Taille » et on incrémente « Total Rebound » pour compter les rebonds.
+Mécanique de rebond : Lorsque le centre de la balle (bx ou by) est inférieur au rayon de la balle (d/2) ou qu'il est supérieur à la taille maximale de la fenêtre c'est que la balle a dépassé le bord gauche, droit, bas ou haut il faut donc la faire rebondir. Pour cela, on inverse la vitesse vx ou vy en fonction du bord touché. (droit et gauche = vx, haut et bas = vy). Lorsque la balle rebondit sur les bords gauche, droit, haut et bas un son est émis grâce à la fonction playsound() de la bibliothèque playsound. Pour éviter d'interrompre le programme en jouant le son, on exécute la fonction playsound dans un autre thread (un thread est un sous-programme).  
+Augmentation de la vitesse : 
+rien
+
+
+puis la vitesse augmente avec la fonction « changer Vitesse » en récupérant les variables globales, et la taille change aléatoirement avec la fonction « changer Taille » en récupérant la variable d et en appliquant à son rayon une taille aléatoire entre 5 et 20 et on incrémente « Total Rebound » pour compter les rebonds.
 
 Pour les rebonds sur les bords gauche et droit on teste si le diamètre est égal à 20 et si oui on incrémente la variable Toto.
+
+
+
+Mathis Bernier
+
+FONCTION 1/ -La fonction "createCanvas" permet de créer une fenêtre avec les dimension souhaités. 
+
+FONCTION 2/ -La fonction  "setup" permet de définir la taille de la balle , son en placement de départ dans un carre , de définir la vitesse de la balle avec l axe vx et vy et de crée une fenêtre canva de 500 par 400
+
+FONCTION 3/ -La fonction "changervitesse" comme son nom l indique elle permet de change la vitesse de la balle de 10 % par rebond.
+
+FONCTION 4/ -La fonction "changertaille" elle aussi comme son nom veut dire que la balle va changer de taille aléatoirement a chaque rebond.
+
+FONCTION 5/ -La fonction "draw" permet de faire le fond noir et de faire les mouvement de la balle sur l axe horizontale et verticale. Elle permet aussi de faire rebondir le balle et de mettre un son a chaque rebon de la balle 
+
 

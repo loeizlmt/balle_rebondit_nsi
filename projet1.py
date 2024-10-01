@@ -38,27 +38,34 @@ def selectionerVxVyDiamètre():
     root_tk = tkinter.Tk()
     root_tk.geometry("600x300")# dimensions de la fenêtre
     root_tk.title("Balle rebondissante")# titre de la fenêtre
+
+    customtkinter.set_appearance_mode("light")# thème de la fenêtre customtkinter en clair
+
     # texte qui indique la valeur à mettre dans la case
     label = customtkinter.CTkLabel(master=root_tk,text="vitesse horizontale de départ (entre 0 et 20) : ",width=120,height=25,corner_radius=8)
     label.place(relx=0.3, rely=0.2, anchor=tkinter.CENTER)
     # entrée où l'utilisateur peut saisir la valeur de la vitesse horizontale de départ
     entry = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
     entry.place(relx=0.7, rely=0.2, anchor=tkinter.CENTER)
+
     # texte qui indique la valeur à mettre dans la case
     label = customtkinter.CTkLabel(master=root_tk,text="vitesse verticale de départ (entre 0 et 20) : ",width=120,height=25,corner_radius=8)
     label.place(relx=0.3, rely=0.4, anchor=tkinter.CENTER)
     # entrée où l'utilisateur peut saisir la valeur de la vitesse verticale de départ
     entry1 = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
     entry1.place(relx=0.7, rely=0.4, anchor=tkinter.CENTER)
+
     # texte qui indique la valeur à mettre dans la case
     label = customtkinter.CTkLabel(master=root_tk,text="diamètre de départ (entre 0 et 20) : ",width=120,height=25,corner_radius=8)
     label.place(relx=0.3, rely=0.6, anchor=tkinter.CENTER)
     # entrée où l'utilisateur peut saisir la valeur du diamètre de la balle de départ
     entry2 = customtkinter.CTkEntry(master=root_tk,width=120,height=25,corner_radius=10)
     entry2.place(relx=0.7, rely=0.6, anchor=tkinter.CENTER)
+
     # bouton pour valider les résultats
     button = customtkinter.CTkButton(master=root_tk,text="Valider",command=valider,width=120, height=32,border_width=0,corner_radius=8)
     button.place(relx=0.5, rely=0.8, anchor=tkinter.CENTER)
+
     # crée la fenêtre
     root_tk.mainloop()
 
@@ -76,8 +83,10 @@ def setup():
 def changerVitesse() : # fonction qui permet d'augmenter la vitesse verticale et horizontale de la balle
     global vx,vy,b # récupère les variables globales
     b = random.randint(90,110)
+    p = random.randint(90,110) 
+    print(b,"%")
     vx = vx * (b/100)
-    vy = vy * (b/100)
+    vy = vy * (p/100)
 
 def changerTaille():# fonction qui permet de changer la taille de la balle aléatoirement
     global d # récupère les variables globales

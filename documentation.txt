@@ -22,4 +22,4 @@ La taille change aléatoirement avec la fonction « changer Taille » en récup�
 
 Notre script fonctionne sous python 3.9.19 car p5 ne fonctionnait pas avec les versions plus récentes.
 
-différentes versions du code : 
+différentes versions du code : https://github.com/loeizlmt/balle_rebondit_nsi/commits/master/projet1.py

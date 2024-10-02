@@ -1,9 +1,10 @@
-from p5 import *
+# import des bibliothèques nécessaires au programme
+from p5 import * 
 import random
 from playsound import playsound
-import threading #importation d une bibliotheque 
+import threading 
 import tkinter #interface graphique 
-import customtkinter #rendu plus nette pour l interface 
+import customtkinter #version plus moderne de tkinter
 from tkinter import messagebox
 
 toto = 0

@@ -21,3 +21,5 @@ Changement de taille :
 La taille change aléatoirement avec la fonction « changer Taille » en récupérant la variable d(le diamètre) et en  lui appliquant aléatoire entre 5 et 20 et on incrémente « Total Rebound » pour compter les rebonds.
 
 Notre script fonctionne sous python 3.9.19 car p5 ne fonctionnait pas avec les versions plus récentes.
+
+différentes versions du code : 

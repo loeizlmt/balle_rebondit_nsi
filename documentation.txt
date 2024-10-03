@@ -14,7 +14,7 @@ Mécanique de rebond : Lorsque le centre de la balle (bx ou by) est inférieur a
 
 Augmentation de la vitesse : 
 
-La vitesse augmente avec la fonction « changer Vitesse » en récupérant la variable b et p et en leur appliquant une valeur aléatoire entre 90 et 110 puis pour la variable vx on multiplie vx avec b/100 et pour la variable vy on multiplie vy avec p/100 ce qui permet d'avoir une direction aléatoire à chaque rebond.
+La vitesse augmente avec la fonction « changer Vitesse » en récupérant la variable b et p et en leur appliquant une valeur aléatoire entre 90 et 110 puis pour la variable vx on multiplie vx avec b/100 (b/100 une valeur comprise entre 90% et 110%) et pour la variable vy on multiplie vy avec p/100 (p/100 une valeur comprise entre 90% et 110%) ce qui permet d'avoir une direction aléatoire à chaque rebond.
 
 Changement de taille :
 

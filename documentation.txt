@@ -14,10 +14,12 @@ Mécanique de rebond : Lorsque le centre de la balle (bx ou by) est inférieur a
 
 Augmentation de la vitesse : 
 
-La vitesse augmente avec la fonction « changer Vitesse » en récupérant la variable b et p et en leur appliquant une valeur aléatoire entre 90 et 110 puis pour la variable vx on multiplie vx avec b/100 et pour la variable vy on multiplie vy avec p/100 ce qui permet d'avoir une direction aléatoire à chaque rebond.
+La vitesse augmente avec la fonction « changer Vitesse » en récupérant la variable b et p et en leur appliquant une valeur aléatoire entre 90 et 110 puis pour la variable vx on multiplie vx avec b/100 (b/100 une valeur comprise entre 90% et 110%) et pour la variable vy on multiplie vy avec p/100 (p/100 une valeur comprise entre 90% et 110%) ce qui permet d'avoir une direction aléatoire à chaque rebond.
 
 Changement de taille :
 
-La taille change aléatoirement avec la fonction « changer Taille » en récupérant la variable d(le diamètre) et en  lui appliquant aléatoire entre 5 et 20 et on incrémente « Total Rebound » pour compter les rebonds.
+La taille change aléatoirement avec la fonction « changer Taille » en récupérant la variable d(le diamètre) et en  lui appliquant aléatoirement une valeur entre 5 et 20 et on incrémente « Total Rebound » pour compter les rebonds.
 
 Notre script fonctionne sous python 3.9.19 car p5 ne fonctionnait pas avec les versions plus récentes.
+
+différentes versions du code : https://github.com/loeizlmt/balle_rebondit_nsi/commits/master/projet1.py

@@ -83,7 +83,7 @@ def setup():
 
 def changerVitesse() : # fonction qui permet d'augmenter la vitesse verticale et horizontale de la balle
     global vx,vy,b # récupère les variables globales
-    b = random.randint(94,110)
+    b = random.randint(94,110)# pour la démo mettre 5 et 6 pour vx et vy
     p = random.randint(94,110) 
     vx = vx * (b/100)
     vy = vy * (p/100)
